@@ -9,16 +9,19 @@ import {
 import { useContext } from "react";
 import { FilmContext } from "../context/FilmContext";
 import { ThemeContext } from "../context/ThemeContext";
+import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Single = () => {
   const { selected, handleDeselect } = useContext(FilmContext);
-  const { title, director, year, imageUrl, rating,genre, description } = selected;
-  const {theme} = useContext(ThemeContext);
+  const { title, slug, director, year, imageUrl, rating, genre, description } =
+    selected;
+  const { theme } = useContext(ThemeContext);
   return (
-    <div
-      className="fixed z-10	 inset-0 flex items-center justify-center bg-[#15151561] p-2"
-    >
-      <div className={`rounded shadow shadow-gray-500 text-${theme.text} bg-${theme.bg} w-full md:w-3/4 lg:w-1/2 flex flex-col  max-h-full overflow-auto`}>
+    <div className="fixed z-10	 inset-0 flex items-center justify-center bg-[#15151561] p-2">
+      <div
+        className={`rounded shadow shadow-gray-500 text-${theme.text} bg-${theme.bg} w-full md:w-3/4 lg:w-1/2 flex flex-col  max-h-full overflow-auto`}
+      >
         <div className={`flex justify-between items-center  p-2`}>
           <h1 className="text-2xl font-semibold ">{title}</h1>
           <FontAwesomeIcon
@@ -45,6 +48,10 @@ const Single = () => {
               <FontAwesomeIcon icon={faTheaterMasks} className="ml-2" />
             </p>
             <p className="mt-5">{description}</p>
+
+            <Link className="mt-auto " to={slug}>
+              <Button fullWidth color={theme.btn}>Go To Film Page </Button>
+            </Link>
           </div>
         </div>
       </div>

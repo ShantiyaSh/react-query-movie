@@ -30,6 +30,10 @@ export const FilmContextProvider = ({ children }) => {
   const handleGenres = (newGenres) => {
     setGenres(newGenres);
   };
+  const findBySlug = (slug) => {
+    return FilmsJson.find((film) => film.slug === slug);
+  }
+
   useEffect(() => {
     if (orderYear) {
       setAllFilms((all) => [].concat(all.sort((a, b) => a.year - b.year)));
@@ -78,6 +82,7 @@ export const FilmContextProvider = ({ children }) => {
         toggleYearOrder,
         toggleRatingOrder,
         handleGenres,
+        findBySlug
       }}
     >
       {children}
