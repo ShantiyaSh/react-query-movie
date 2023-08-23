@@ -7,4 +7,4 @@ In this project, I've embraced functional components and harnessed the power of 
 - Genre Filtering: Easily discover films by filtering them based on different genres.
 - Title Search: Quickly find films by searching their titles.
 - Customizable Sorting: Arrange films by rating or release year to match your preferences.
-- Dark and Light Themes: Switch between dark and light themes for a personalized viewing experience..
+- Dark and Light Themes: Switch between dark and light themes for a personalized viewing experience.
